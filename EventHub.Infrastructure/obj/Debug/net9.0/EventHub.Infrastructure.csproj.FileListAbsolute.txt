@@ -1,0 +1,17 @@
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\bin\Debug\net9.0\EventHub.Infrastructure.deps.json
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\bin\Debug\net9.0\EventHub.Infrastructure.runtimeconfig.json
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\bin\Debug\net9.0\EventHub.Infrastructure.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\bin\Debug\net9.0\EventHub.Infrastructure.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\bin\Debug\net9.0\EventHub.Domain.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\bin\Debug\net9.0\EventHub.Domain.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.AssemblyInfo.cs
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.F3E8A021.Up2Date
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\refint\EventHub.Infrastructure.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.genruntimeconfig.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\ref\EventHub.Infrastructure.dll

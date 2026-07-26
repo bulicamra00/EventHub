@@ -1,0 +1,15 @@
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\bin\Debug\net9.0\EventHub.Application.deps.json
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\bin\Debug\net9.0\EventHub.Application.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\bin\Debug\net9.0\EventHub.Application.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\bin\Debug\net9.0\EventHub.Domain.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\bin\Debug\net9.0\EventHub.Domain.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.csproj.AssemblyReference.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.AssemblyInfoInputs.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.AssemblyInfo.cs
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.csproj.CoreCompileInputs.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.59B7AABA.Up2Date
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\refint\EventHub.Application.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\ref\EventHub.Application.dll

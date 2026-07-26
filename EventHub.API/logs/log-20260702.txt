@@ -1,0 +1,590 @@
+2026-07-02 14:18:37.958 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-07-02 14:18:38.244 +02:00 [INF] Hangfire SQL objects installed.
+2026-07-02 14:18:38.563 +02:00 [INF] User profile is available. Using 'C:\Users\bulic\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-02 14:18:38.697 +02:00 [INF] Now listening on: http://localhost:5110
+2026-07-02 14:18:38.706 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: localhost,1433@EventHubDb'
+2026-07-02 14:18:38.707 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-07-02 14:18:38.709 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-07-02 14:18:38.722 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-02 14:18:38.724 +02:00 [INF] Hosting environment: Development
+2026-07-02 14:18:38.725 +02:00 [INF] Content root path: C:\Users\bulic\Desktop\EventHub\EventHub.API
+2026-07-02 14:18:38.744 +02:00 [INF] Server amra:22820:956a019c successfully announced in 13.2879 ms
+2026-07-02 14:18:38.747 +02:00 [INF] Server amra:22820:956a019c is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-07-02 14:18:38.757 +02:00 [INF] Server amra:22820:956a019c all the dispatchers started
+2026-07-02 14:18:47.051 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/hangfire - null null
+2026-07-02 14:18:47.560 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/hangfire - 200 null text/html 511.7311ms
+2026-07-02 14:18:47.606 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/hangfire/css182301772269538 - null null
+2026-07-02 14:18:47.611 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/hangfire/css-dark182301087393225 - null null
+2026-07-02 14:18:47.613 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/hangfire/js182301777342957 - null null
+2026-07-02 14:18:47.653 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/hangfire/css182301772269538 - 200 null text/css 47.7757ms
+2026-07-02 14:18:47.655 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/hangfire/css-dark182301087393225 - 200 null text/css 45.9676ms
+2026-07-02 14:18:47.714 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/hangfire/js182301777342957 - 200 null application/javascript 101.6794ms
+2026-07-02 14:18:49.891 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:18:49.974 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 83.293ms
+2026-07-02 14:18:51.989 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:18:52.042 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 53.2676ms
+2026-07-02 14:18:54.344 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:18:54.398 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 54.2824ms
+2026-07-02 14:18:57.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:18:57.440 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 42.9389ms
+2026-07-02 14:19:00.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:00.462 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 63.9814ms
+2026-07-02 14:19:03.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:03.426 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 33.902ms
+2026-07-02 14:19:06.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:06.420 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 30.5122ms
+2026-07-02 14:19:09.401 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:09.456 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 54.5039ms
+2026-07-02 14:19:12.402 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:12.452 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 49.9372ms
+2026-07-02 14:19:15.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:15.442 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 51.8232ms
+2026-07-02 14:19:18.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:18.445 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 47.0532ms
+2026-07-02 14:19:21.386 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:21.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 59.4119ms
+2026-07-02 14:19:24.385 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:24.472 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 86.7621ms
+2026-07-02 14:19:27.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:27.418 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 21.6843ms
+2026-07-02 14:19:30.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:30.444 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 52.6763ms
+2026-07-02 14:19:33.393 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:33.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 37.7087ms
+2026-07-02 14:19:36.401 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:36.457 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 55.6706ms
+2026-07-02 14:19:39.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:39.432 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 42.6872ms
+2026-07-02 14:19:42.396 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:42.447 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 51.2814ms
+2026-07-02 14:19:45.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:45.439 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 44.8772ms
+2026-07-02 14:19:48.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:48.448 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 48.2081ms
+2026-07-02 14:19:51.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:51.443 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 44.029ms
+2026-07-02 14:19:54.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:54.444 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 49.709ms
+2026-07-02 14:19:57.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:19:57.440 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 41.5899ms
+2026-07-02 14:20:00.396 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:00.438 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 42.4873ms
+2026-07-02 14:20:03.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:03.442 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 47.8892ms
+2026-07-02 14:20:06.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:06.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 54.2333ms
+2026-07-02 14:20:09.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:09.474 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 83.05ms
+2026-07-02 14:20:12.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:12.444 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 48.9337ms
+2026-07-02 14:20:15.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:15.466 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 67.229ms
+2026-07-02 14:20:18.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:18.486 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 95.7596ms
+2026-07-02 14:20:21.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:21.428 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 33.4318ms
+2026-07-02 14:20:24.393 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:24.460 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 67.087ms
+2026-07-02 14:20:27.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:27.457 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 65.8432ms
+2026-07-02 14:20:30.403 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:30.484 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 81.0612ms
+2026-07-02 14:20:32.992 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/hangfire - null null
+2026-07-02 14:20:33.075 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/hangfire - 200 null text/html 82.4203ms
+2026-07-02 14:20:33.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:33.465 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 72.4468ms
+2026-07-02 14:20:35.258 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:35.322 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 64.2607ms
+2026-07-02 14:20:36.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:36.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 38.6741ms
+2026-07-02 14:20:37.339 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:37.398 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 59.252ms
+2026-07-02 14:20:39.401 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:39.463 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 62.1538ms
+2026-07-02 14:20:42.396 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:42.436 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.6875ms
+2026-07-02 14:20:45.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:45.430 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.0742ms
+2026-07-02 14:20:48.387 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:48.423 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 36.0964ms
+2026-07-02 14:20:51.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:51.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 35.8901ms
+2026-07-02 14:20:54.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:54.414 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 25.146ms
+2026-07-02 14:20:57.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:20:57.426 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 33.3786ms
+2026-07-02 14:21:00.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:00.422 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 31.5106ms
+2026-07-02 14:21:03.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:03.436 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 40.5497ms
+2026-07-02 14:21:06.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:06.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 52.398ms
+2026-07-02 14:21:09.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:09.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 40.7725ms
+2026-07-02 14:21:12.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:12.442 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 53.1963ms
+2026-07-02 14:21:15.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:15.428 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 33.306ms
+2026-07-02 14:21:18.387 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:18.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 58.9506ms
+2026-07-02 14:21:21.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:21.421 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 31.133ms
+2026-07-02 14:21:24.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:24.413 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 21.3453ms
+2026-07-02 14:21:27.388 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:27.416 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 27.4397ms
+2026-07-02 14:21:30.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:30.436 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.1343ms
+2026-07-02 14:21:33.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:33.429 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.6202ms
+2026-07-02 14:21:36.385 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:36.406 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 21.8591ms
+2026-07-02 14:21:39.384 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:39.424 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 40.4239ms
+2026-07-02 14:21:42.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:42.421 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 23.3722ms
+2026-07-02 14:21:45.385 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:45.459 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 73.5966ms
+2026-07-02 14:21:48.385 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:48.419 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 33.9078ms
+2026-07-02 14:21:51.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:51.430 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 31.0465ms
+2026-07-02 14:21:54.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:54.460 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 61.4371ms
+2026-07-02 14:21:57.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:21:57.464 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 64.8243ms
+2026-07-02 14:22:00.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:00.441 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 52.095ms
+2026-07-02 14:22:03.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:03.459 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 61.2662ms
+2026-07-02 14:22:06.405 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:06.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 40.3264ms
+2026-07-02 14:22:09.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:09.439 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 45.2537ms
+2026-07-02 14:22:12.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:12.460 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 65.1542ms
+2026-07-02 14:22:15.387 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:15.422 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 34.6236ms
+2026-07-02 14:22:18.387 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:18.423 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 35.5534ms
+2026-07-02 14:22:21.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:21.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 32.228ms
+2026-07-02 14:22:24.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:24.437 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 47.6171ms
+2026-07-02 14:22:27.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:27.477 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 82.3601ms
+2026-07-02 14:22:30.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:30.442 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 51.2733ms
+2026-07-02 14:22:33.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:33.427 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 37.3441ms
+2026-07-02 14:22:36.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:36.450 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 54.7739ms
+2026-07-02 14:22:39.396 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:39.444 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 48.2686ms
+2026-07-02 14:22:42.403 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:42.460 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 57.8081ms
+2026-07-02 14:22:45.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:45.417 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 17.794ms
+2026-07-02 14:22:48.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:48.414 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 25.1424ms
+2026-07-02 14:22:51.386 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:51.415 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 28.8278ms
+2026-07-02 14:22:54.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:54.413 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 24.2092ms
+2026-07-02 14:22:57.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:22:57.426 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 34.8947ms
+2026-07-02 14:23:00.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:00.423 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 27.9382ms
+2026-07-02 14:23:03.386 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:03.435 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 49.192ms
+2026-07-02 14:23:06.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:06.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 48.3849ms
+2026-07-02 14:23:09.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:09.410 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 19.7531ms
+2026-07-02 14:23:12.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:12.444 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 45.3583ms
+2026-07-02 14:23:15.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:15.424 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 34.6207ms
+2026-07-02 14:23:18.404 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:18.437 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 32.4072ms
+2026-07-02 14:23:21.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:21.419 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 30.4262ms
+2026-07-02 14:23:24.406 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:24.473 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 67.8134ms
+2026-07-02 14:23:27.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:27.440 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 44.5683ms
+2026-07-02 14:23:30.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:30.449 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 53.3996ms
+2026-07-02 14:23:33.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:33.436 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 45.3478ms
+2026-07-02 14:23:36.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:36.439 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 45.3606ms
+2026-07-02 14:23:39.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:39.430 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 38.9148ms
+2026-07-02 14:23:42.400 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:42.474 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 74.0026ms
+2026-07-02 14:23:45.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:45.420 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 26.6602ms
+2026-07-02 14:23:48.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:48.425 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 34.3679ms
+2026-07-02 14:23:51.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:51.448 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 49.7171ms
+2026-07-02 14:23:54.396 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:54.441 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 45.229ms
+2026-07-02 14:23:57.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:23:57.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.793ms
+2026-07-02 14:24:00.386 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:00.424 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 37.5094ms
+2026-07-02 14:24:03.396 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:03.436 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 40.2223ms
+2026-07-02 14:24:06.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:06.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.43ms
+2026-07-02 14:24:09.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:09.432 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 42.4286ms
+2026-07-02 14:24:12.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:12.438 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 46.1337ms
+2026-07-02 14:24:15.405 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:15.467 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 61.9586ms
+2026-07-02 14:24:18.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:18.426 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 36.607ms
+2026-07-02 14:24:21.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:21.452 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 60.984ms
+2026-07-02 14:24:24.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:24.449 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 59.9045ms
+2026-07-02 14:24:27.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:27.420 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 22.9564ms
+2026-07-02 14:24:30.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:30.437 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 46.0269ms
+2026-07-02 14:24:33.400 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:33.478 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 78.2923ms
+2026-07-02 14:24:36.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:36.443 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 53.8475ms
+2026-07-02 14:24:39.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:39.443 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 47.8169ms
+2026-07-02 14:24:42.400 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:42.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 31.4213ms
+2026-07-02 14:24:45.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:45.447 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 52.7151ms
+2026-07-02 14:24:48.402 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:48.443 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 41.4818ms
+2026-07-02 14:24:51.385 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:51.432 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 47.0436ms
+2026-07-02 14:24:54.402 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:54.473 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 70.7782ms
+2026-07-02 14:24:57.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:24:57.439 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.1759ms
+2026-07-02 14:25:00.393 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:00.433 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 40.0798ms
+2026-07-02 14:25:03.400 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:03.458 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 57.9622ms
+2026-07-02 14:25:06.387 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:06.433 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 46.8523ms
+2026-07-02 14:25:09.401 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:09.440 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.1342ms
+2026-07-02 14:25:12.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:12.437 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 42.0487ms
+2026-07-02 14:25:15.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:15.447 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 55.7875ms
+2026-07-02 14:25:18.389 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:18.422 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 33.0225ms
+2026-07-02 14:25:21.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:21.448 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 48.6928ms
+2026-07-02 14:25:24.404 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:24.440 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 35.1276ms
+2026-07-02 14:25:27.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:27.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 51.3287ms
+2026-07-02 14:25:30.396 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:30.446 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 50.1429ms
+2026-07-02 14:25:33.393 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:33.436 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 43.3496ms
+2026-07-02 14:25:36.385 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:36.421 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 35.6617ms
+2026-07-02 14:25:39.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:39.448 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 48.4019ms
+2026-07-02 14:25:42.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:42.428 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 36.0551ms
+2026-07-02 14:25:45.393 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:45.461 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 68.4918ms
+2026-07-02 14:25:48.384 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:48.422 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 37.4872ms
+2026-07-02 14:25:51.400 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:51.430 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 30.2019ms
+2026-07-02 14:25:54.391 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:54.422 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 31.0103ms
+2026-07-02 14:25:57.421 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:25:57.460 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.7921ms
+2026-07-02 14:26:00.386 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:00.429 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 43.082ms
+2026-07-02 14:26:03.384 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:03.427 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 42.8882ms
+2026-07-02 14:26:06.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:06.440 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 49.5328ms
+2026-07-02 14:26:09.386 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:09.439 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 52.4775ms
+2026-07-02 14:26:12.387 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:12.427 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 39.8366ms
+2026-07-02 14:26:15.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:15.434 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 35.705ms
+2026-07-02 14:26:18.388 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:18.426 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 37.8566ms
+2026-07-02 14:26:21.388 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:21.432 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 44.8322ms
+2026-07-02 14:26:24.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:24.427 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 36.8944ms
+2026-07-02 14:26:27.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:27.434 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 35.3498ms
+2026-07-02 14:26:30.398 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:30.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 33.0466ms
+2026-07-02 14:26:33.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:33.427 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 35.2242ms
+2026-07-02 14:26:36.400 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:36.475 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 75.2495ms
+2026-07-02 14:26:39.388 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:39.431 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 42.332ms
+2026-07-02 14:26:42.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:42.466 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 68.9384ms
+2026-07-02 14:26:45.395 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:45.523 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 127.3173ms
+2026-07-02 14:26:48.394 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:48.436 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 41.9447ms
+2026-07-02 14:26:51.399 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:51.427 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 28.9742ms
+2026-07-02 14:26:54.388 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:54.417 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 28.5381ms
+2026-07-02 14:26:57.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:26:57.419 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 26.6009ms
+2026-07-02 14:27:00.404 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:27:00.443 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 38.5598ms
+2026-07-02 14:27:03.390 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:27:03.409 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 18.9521ms
+2026-07-02 14:27:06.402 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:27:06.434 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 32.1248ms
+2026-07-02 14:27:09.388 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:27:09.421 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 32.7379ms
+2026-07-02 14:27:12.392 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:27:12.429 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 36.6925ms
+2026-07-02 14:27:15.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:27:15.426 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 200 null application/json 28.8309ms
+2026-07-02 14:27:18.397 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5110/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-07-02 14:27:18.506 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5110/hangfire/stats - 400 null application/json 108.7549ms
+2026-07-02 14:27:21.375 +02:00 [WRN] Stopping the server due to DomainUnload or ProcessExit event...
+2026-07-02 14:27:21.377 +02:00 [INF] Server amra:22820:956a019c caught stopping signal...
+2026-07-02 14:27:21.380 +02:00 [INF] Server amra:22820:956a019c caught stopped signal...
+2026-07-02 14:27:21.384 +02:00 [WRN] Server amra:22820:956a019c caught shutdown signal...
+2026-07-02 14:27:21.387 +02:00 [INF] Server amra:22820:956a019c All dispatchers stopped
+2026-07-02 14:58:06.296 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 14:58:06.340 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-02 14:58:06.358 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-02 14:58:06.411 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-02 14:58:06.439 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 14:58:06.450 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-02 14:58:06.466 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-02 14:58:06.500 +02:00 [INF] Applying migration '20260702125539_AddReminderFieldsToTicket'.
+2026-07-02 14:58:06.521 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Tickets] ADD [ReminderSent] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-07-02 14:58:06.529 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Tickets] ADD [ReminderSentAt] datetime2 NULL;
+2026-07-02 14:58:06.540 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260702125539_AddReminderFieldsToTicket', N'9.0.0');
+2026-07-02 14:58:06.571 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-07-02 20:05:33.301 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 20:05:33.417 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-02 20:05:33.456 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-02 20:05:33.533 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-02 20:05:33.556 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 20:05:33.560 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-02 20:05:33.591 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-02 20:05:33.614 +02:00 [INF] Applying migration '20260702180503_AddPendingPaymentStatus'.
+2026-07-02 20:05:33.637 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260702180503_AddPendingPaymentStatus', N'9.0.0');
+2026-07-02 20:05:33.656 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-07-02 23:11:04.116 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:11:04.175 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-02 23:11:04.220 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-02 23:11:04.285 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-02 23:11:04.298 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:11:04.304 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-02 23:11:04.312 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-02 23:11:04.325 +02:00 [INF] Applying migration '20260702211037_AddPrivateEventsAndInvitations'.
+2026-07-02 23:11:04.350 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Events] ADD [IsPrivate] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-07-02 23:11:04.370 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [EventInvitations] (
+    [Id] uniqueidentifier NOT NULL,
+    [EventId] uniqueidentifier NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Token] nvarchar(max) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    CONSTRAINT [PK_EventInvitations] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_EventInvitations_Events_EventId] FOREIGN KEY ([EventId]) REFERENCES [Events] ([Id]) ON DELETE CASCADE
+);
+2026-07-02 23:11:04.374 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_EventInvitations_EventId] ON [EventInvitations] ([EventId]);
+2026-07-02 23:11:04.382 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260702211037_AddPrivateEventsAndInvitations', N'9.0.0');
+2026-07-02 23:11:04.399 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-07-02 23:50:40.998 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:50:41.050 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-02 23:50:41.066 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-02 23:50:41.125 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-02 23:50:41.138 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:50:41.142 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-02 23:50:41.152 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-02 23:50:41.163 +02:00 [INF] Applying migration '20260702214710_AddPrivateEventsAndInvitations'.
+2026-07-02 23:50:41.205 +02:00 [ERR] Failed executing DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Events] ADD [IsPrivate] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-07-02 23:54:30.471 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:54:30.531 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-02 23:54:30.547 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-02 23:54:30.598 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-02 23:54:30.613 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:54:30.617 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-02 23:54:30.622 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-02 23:54:30.637 +02:00 [INF] Applying migration '20260702214710_AddPrivateEventsAndInvitations'.
+2026-07-02 23:54:30.667 +02:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [EventInvitations] (
+    [Id] uniqueidentifier NOT NULL,
+    [EventId] uniqueidentifier NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Token] nvarchar(max) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    CONSTRAINT [PK_EventInvitations] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_EventInvitations_Events_EventId] FOREIGN KEY ([EventId]) REFERENCES [Events] ([Id]) ON DELETE CASCADE
+);
+2026-07-02 23:58:38.652 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:58:38.705 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-02 23:58:38.722 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-02 23:58:38.771 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-02 23:58:38.784 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-02 23:58:38.788 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-02 23:58:38.795 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-02 23:58:38.807 +02:00 [INF] Applying migration '20260702215020_RestoreMissingMigrations'.
+2026-07-02 23:58:38.819 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260702215020_RestoreMissingMigrations', N'9.0.0');
+2026-07-02 23:58:38.848 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result

@@ -1,0 +1,11 @@
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\bin\Debug\net9.0\EventHub.Domain.deps.json
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\bin\Debug\net9.0\EventHub.Domain.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\bin\Debug\net9.0\EventHub.Domain.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.AssemblyInfoInputs.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.AssemblyInfo.cs
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\refint\EventHub.Domain.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.pdb
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\ref\EventHub.Domain.dll

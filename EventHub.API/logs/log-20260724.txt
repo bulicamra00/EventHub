@@ -1,0 +1,1094 @@
+2026-07-24 19:51:53.443 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-07-24 19:51:54.366 +02:00 [INF] Hangfire SQL objects installed.
+2026-07-24 19:51:55.056 +02:00 [INF] User profile is available. Using 'C:\Users\bulic\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-24 19:51:55.244 +02:00 [INF] Now listening on: http://localhost:5110
+2026-07-24 19:51:55.255 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: localhost,1433@EventHubDb'
+2026-07-24 19:51:55.257 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-07-24 19:51:55.258 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-07-24 19:51:55.276 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-24 19:51:55.279 +02:00 [INF] Hosting environment: Development
+2026-07-24 19:51:55.329 +02:00 [INF] Content root path: C:\Users\bulic\Desktop\EventHub\EventHub.API
+2026-07-24 19:51:55.349 +02:00 [INF] Server amra:17124:24cf1527 successfully announced in 51.3218 ms
+2026-07-24 19:51:55.359 +02:00 [INF] Server amra:17124:24cf1527 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-07-24 19:51:55.423 +02:00 [INF] Server amra:17124:24cf1527 all the dispatchers started
+2026-07-24 19:51:57.844 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__windowStart_0='?' (DbType = DateTime2), @__windowEnd_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AttendeeEmail], [t].[AttendeeName], [t].[CreatedAt], [t].[EventId], [t].[PurchaseDate], [t].[PurchasePrice], [t].[ReminderSent], [t].[ReminderSentAt], [t].[Status], [t].[TicketCode], [t].[TicketTypeId], [t].[UpdatedAt], [t].[UserId], [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+FROM [Tickets] AS [t]
+INNER JOIN [Events] AS [e] ON [t].[EventId] = [e].[Id]
+WHERE [t].[ReminderSent] = CAST(0 AS bit) AND [e].[StartDate] >= @__windowStart_0 AND [e].[StartDate] <= @__windowEnd_1
+2026-07-24 19:51:57.844 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[EventId], [b].[ExpiresAt], [b].[QrCode], [b].[Quantity], [b].[Status], [b].[TicketTypeId], [b].[TotalPrice], [b].[UpdatedAt], [b].[UserId]
+FROM [Bookings] AS [b]
+WHERE [b].[Status] = 1 AND [b].[ExpiresAt] < GETUTCDATE()
+2026-07-24 19:55:33.037 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5110/api/v1/Events/personalized - null null
+2026-07-24 19:55:33.036 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5110/api/v1/Events/personalized - null null
+2026-07-24 19:55:33.160 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:55:33.160 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:55:33.173 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5110/api/v1/Events/personalized - 204 null null 136.931ms
+2026-07-24 19:55:33.173 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5110/api/v1/Events/personalized - 204 null null 136.9379ms
+2026-07-24 19:55:33.200 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events/personalized - null null
+2026-07-24 19:55:33.223 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:55:33.254 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-07-24 19:55:33.422 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23/07/2026 21:29:15', Current time (UTC): '24/07/2026 17:55:33'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-07-24 19:55:33.446 +02:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23/07/2026 21:29:15', Current time (UTC): '24/07/2026 17:55:33'.
+2026-07-24 19:55:33.459 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Attendee)
+2026-07-24 19:55:33.471 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-07-24 19:55:33.480 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events/personalized - 401 0 null 279.7178ms
+2026-07-24 19:55:33.496 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events/personalized - null null
+2026-07-24 19:55:33.514 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:55:33.526 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23/07/2026 21:29:15', Current time (UTC): '24/07/2026 17:55:33'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-07-24 19:55:33.536 +02:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '23/07/2026 21:29:15', Current time (UTC): '24/07/2026 17:55:33'.
+2026-07-24 19:55:33.544 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Attendee)
+2026-07-24 19:55:33.549 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-07-24 19:55:33.556 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events/personalized - 401 0 null 59.9419ms
+2026-07-24 19:55:48.931 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 19:55:48.949 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:55:48.961 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 19:55:49.026 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 19:55:49.239 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-07-24 19:55:49.375 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 19:55:49.504 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 19:55:49.772 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 19:55:49.970 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 918.0465ms
+2026-07-24 19:55:49.975 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 19:55:49.979 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 1048.2216ms
+2026-07-24 19:56:04.213 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&status=2&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 19:56:04.224 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:56:04.227 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 19:56:04.232 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 19:56:04.261 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__request_Status_Value_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[Status] = @__request_Status_Value_0
+2026-07-24 19:56:04.309 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__request_Status_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[Status] = @__request_Status_Value_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 19:56:04.333 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 19:56:04.337 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 99.0534ms
+2026-07-24 19:56:04.341 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 19:56:04.344 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&status=2&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 131.3466ms
+2026-07-24 19:56:11.056 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Reviews/event/55241666-2427-4725-ab6f-c1738cb87939 - null null
+2026-07-24 19:56:11.056 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events/55241666-2427-4725-ab6f-c1738cb87939 - null null
+2026-07-24 19:56:11.076 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:56:11.088 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:56:11.091 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.ReviewsController.GetEventReviews (EventHub.API)'
+2026-07-24 19:56:11.095 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetById (EventHub.API)'
+2026-07-24 19:56:11.111 +02:00 [INF] Route matched with {action = "GetEventReviews", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[EventHub.Application.Features.Reviews.Queries.GetEventReviews.ReviewDto]]] GetEventReviews(System.Guid) on controller EventHub.API.Controllers.ReviewsController (EventHub.API).
+2026-07-24 19:56:11.112 +02:00 [INF] Route matched with {action = "GetById", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.String) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 19:56:11.164 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-07-24 19:56:11.181 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__request_EventId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[EventId], [r].[Rating], [r].[UpdatedAt], [r].[UserId], [u].[Id], [u].[BanReason], [u].[City], [u].[CreatedAt], [u].[Email], [u].[EmailVerificationToken], [u].[EmailVerificationTokenExpiry], [u].[FullName], [u].[Interests], [u].[IsBlocked], [u].[IsEmailVerified], [u].[IsOrganizerRequested], [u].[OrganizerRequestStatus], [u].[PasswordHash], [u].[RefreshToken], [u].[RefreshTokenCreated], [u].[RefreshTokenExpiryTime], [u].[RefreshTokenRevoked], [u].[ReplacedByToken], [u].[Role], [u].[UpdatedAt], [u].[UserId]
+FROM [Reviews] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__request_EventId_0
+2026-07-24 19:56:11.194 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Reviews.Queries.GetEventReviews.ReviewDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 19:56:11.201 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[BlockReason], [s].[CancelReason], [s].[CategoryId], [s].[CoverImageUrl], [s].[CreatedAt], [s].[Description], [s].[EndDate], [s].[EventSeriesId], [s].[IsBlocked], [s].[IsPrivate], [s].[Latitude], [s].[Location], [s].[Longitude], [s].[OnlineLink], [s].[OrganizerId], [s].[StartDate], [s].[Status], [s].[Title], [s].[UpdatedAt], [s].[Id0], [s].[CreatedAt0], [s].[Description0], [s].[Name], [s].[UpdatedAt0], [t].[Id], [t].[Capacity], [t].[Category], [t].[CreatedAt], [t].[EarlyBirdExpiryDate], [t].[EarlyBirdPrice], [t].[EventId], [t].[Name], [t].[Price], [t].[ReservedCount], [t].[RowVersion], [t].[SoldCount], [t].[UpdatedAt], [s0].[EventId], [s0].[TagId], [s0].[Id], [s0].[CreatedAt], [s0].[Name], [s0].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt], [c].[Id] AS [Id0], [c].[CreatedAt] AS [CreatedAt0], [c].[Description] AS [Description0], [c].[Name], [c].[UpdatedAt] AS [UpdatedAt0]
+    FROM [Events] AS [e]
+    INNER JOIN [Categories] AS [c] ON [e].[CategoryId] = [c].[Id]
+    WHERE [e].[Id] = @__request_Id_0
+) AS [s]
+LEFT JOIN [TicketTypes] AS [t] ON [s].[Id] = [t].[EventId]
+LEFT JOIN (
+    SELECT [e0].[EventId], [e0].[TagId], [t0].[Id], [t0].[CreatedAt], [t0].[Name], [t0].[UpdatedAt]
+    FROM [EventTags] AS [e0]
+    INNER JOIN [Tags] AS [t0] ON [e0].[TagId] = [t0].[Id]
+) AS [s0] ON [s].[Id] = [s0].[EventId]
+ORDER BY [s].[Id], [s].[Id0], [t].[Id], [s0].[EventId], [s0].[TagId]
+2026-07-24 19:56:11.213 +02:00 [INF] Executed action EventHub.API.Controllers.ReviewsController.GetEventReviews (EventHub.API) in 94.8839ms
+2026-07-24 19:56:11.216 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Reviews/event/55241666-2427-4725-ab6f-c1738cb87939 - null null
+2026-07-24 19:56:11.224 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.ReviewsController.GetEventReviews (EventHub.API)'
+2026-07-24 19:56:11.236 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:56:11.243 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.ReviewsController.GetEventReviews (EventHub.API)'
+2026-07-24 19:56:11.244 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Reviews/event/55241666-2427-4725-ab6f-c1738cb87939 - 200 null application/json; charset=utf-8 187.7618ms
+2026-07-24 19:56:11.247 +02:00 [INF] Route matched with {action = "GetEventReviews", controller = "Reviews"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[EventHub.Application.Features.Reviews.Queries.GetEventReviews.ReviewDto]]] GetEventReviews(System.Guid) on controller EventHub.API.Controllers.ReviewsController (EventHub.API).
+2026-07-24 19:56:11.274 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_EventId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[EventId], [r].[Rating], [r].[UpdatedAt], [r].[UserId], [u].[Id], [u].[BanReason], [u].[City], [u].[CreatedAt], [u].[Email], [u].[EmailVerificationToken], [u].[EmailVerificationTokenExpiry], [u].[FullName], [u].[Interests], [u].[IsBlocked], [u].[IsEmailVerified], [u].[IsOrganizerRequested], [u].[OrganizerRequestStatus], [u].[PasswordHash], [u].[RefreshToken], [u].[RefreshTokenCreated], [u].[RefreshTokenExpiryTime], [u].[RefreshTokenRevoked], [u].[ReplacedByToken], [u].[Role], [u].[UpdatedAt], [u].[UserId]
+FROM [Reviews] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__request_EventId_0
+2026-07-24 19:56:11.282 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Reviews.Queries.GetEventReviews.ReviewDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 19:56:11.287 +02:00 [INF] Executed action EventHub.API.Controllers.ReviewsController.GetEventReviews (EventHub.API) in 24.0402ms
+2026-07-24 19:56:11.293 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.ReviewsController.GetEventReviews (EventHub.API)'
+2026-07-24 19:56:11.297 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Reviews/event/55241666-2427-4725-ab6f-c1738cb87939 - 200 null application/json; charset=utf-8 81.5137ms
+2026-07-24 19:56:11.344 +02:00 [INF] Executing OkObjectResult, writing value of type 'EventHub.Application.Features.Events.Queries.GetEventDetails.EventDetailsDto'.
+2026-07-24 19:56:11.363 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetById (EventHub.API) in 236.0776ms
+2026-07-24 19:56:11.365 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events/55241666-2427-4725-ab6f-c1738cb87939 - null null
+2026-07-24 19:56:11.367 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetById (EventHub.API)'
+2026-07-24 19:56:11.374 +02:00 [INF] CORS policy execution successful.
+2026-07-24 19:56:11.377 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events/55241666-2427-4725-ab6f-c1738cb87939 - 200 null application/json; charset=utf-8 320.7208ms
+2026-07-24 19:56:11.380 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetById (EventHub.API)'
+2026-07-24 19:56:11.397 +02:00 [INF] Route matched with {action = "GetById", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid, System.String) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 19:56:11.413 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[BlockReason], [s].[CancelReason], [s].[CategoryId], [s].[CoverImageUrl], [s].[CreatedAt], [s].[Description], [s].[EndDate], [s].[EventSeriesId], [s].[IsBlocked], [s].[IsPrivate], [s].[Latitude], [s].[Location], [s].[Longitude], [s].[OnlineLink], [s].[OrganizerId], [s].[StartDate], [s].[Status], [s].[Title], [s].[UpdatedAt], [s].[Id0], [s].[CreatedAt0], [s].[Description0], [s].[Name], [s].[UpdatedAt0], [t].[Id], [t].[Capacity], [t].[Category], [t].[CreatedAt], [t].[EarlyBirdExpiryDate], [t].[EarlyBirdPrice], [t].[EventId], [t].[Name], [t].[Price], [t].[ReservedCount], [t].[RowVersion], [t].[SoldCount], [t].[UpdatedAt], [s0].[EventId], [s0].[TagId], [s0].[Id], [s0].[CreatedAt], [s0].[Name], [s0].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt], [c].[Id] AS [Id0], [c].[CreatedAt] AS [CreatedAt0], [c].[Description] AS [Description0], [c].[Name], [c].[UpdatedAt] AS [UpdatedAt0]
+    FROM [Events] AS [e]
+    INNER JOIN [Categories] AS [c] ON [e].[CategoryId] = [c].[Id]
+    WHERE [e].[Id] = @__request_Id_0
+) AS [s]
+LEFT JOIN [TicketTypes] AS [t] ON [s].[Id] = [t].[EventId]
+LEFT JOIN (
+    SELECT [e0].[EventId], [e0].[TagId], [t0].[Id], [t0].[CreatedAt], [t0].[Name], [t0].[UpdatedAt]
+    FROM [EventTags] AS [e0]
+    INNER JOIN [Tags] AS [t0] ON [e0].[TagId] = [t0].[Id]
+) AS [s0] ON [s].[Id] = [s0].[EventId]
+ORDER BY [s].[Id], [s].[Id0], [t].[Id], [s0].[EventId], [s0].[TagId]
+2026-07-24 19:56:11.424 +02:00 [INF] Executing OkObjectResult, writing value of type 'EventHub.Application.Features.Events.Queries.GetEventDetails.EventDetailsDto'.
+2026-07-24 19:56:11.437 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetById (EventHub.API) in 33.2992ms
+2026-07-24 19:56:11.444 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetById (EventHub.API)'
+2026-07-24 19:56:11.450 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events/55241666-2427-4725-ab6f-c1738cb87939 - 200 null application/json; charset=utf-8 85.3289ms
+2026-07-24 20:01:20.889 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:01:20.899 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:20.903 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:20.913 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:01:20.937 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:01:20.947 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:20.951 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 33.0781ms
+2026-07-24 20:01:20.953 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:20.955 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 65.4854ms
+2026-07-24 20:01:25.467 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:01:25.473 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:25.477 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:25.481 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:01:25.499 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:01:25.506 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:25.511 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 22.2946ms
+2026-07-24 20:01:25.516 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:01:25.517 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:25.526 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:25.529 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 61.2205ms
+2026-07-24 20:01:25.532 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:25.545 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:01:25.565 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:01:25.574 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:25.579 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 27.5478ms
+2026-07-24 20:01:25.584 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:25.589 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 72.6598ms
+2026-07-24 20:01:28.447 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:01:28.473 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:28.475 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:01:28.479 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:01:28.494 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:01:28.545 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:01:28.593 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:28.599 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 116.4234ms
+2026-07-24 20:01:28.628 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:01:28.632 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 184.797ms
+2026-07-24 20:01:34.746 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:01:34.760 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:34.765 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:34.772 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:01:34.789 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:01:34.797 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:34.803 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 23.0955ms
+2026-07-24 20:01:34.806 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:01:34.809 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:34.818 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:34.821 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 74.7921ms
+2026-07-24 20:01:34.824 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:34.840 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:01:34.856 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:01:34.864 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:34.870 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 19.3708ms
+2026-07-24 20:01:34.875 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:34.878 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 72.0045ms
+2026-07-24 20:01:37.320 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:01:37.326 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:37.330 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:01:37.333 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:01:37.344 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:01:37.356 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:01:37.368 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:37.372 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 34.5485ms
+2026-07-24 20:01:37.376 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:01:37.378 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 57.7007ms
+2026-07-24 20:01:39.998 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:01:40.007 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:40.010 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:40.016 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:01:40.029 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:01:40.038 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:40.043 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 20.4794ms
+2026-07-24 20:01:40.046 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:01:40.048 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:40.056 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:01:40.059 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 60.8006ms
+2026-07-24 20:01:40.061 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:40.088 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:01:40.112 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:01:40.124 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:01:40.131 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 29.6288ms
+2026-07-24 20:01:40.137 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:01:40.142 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 96.1753ms
+2026-07-24 20:05:27.951 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:05:27.962 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:27.967 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:27.972 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:05:27.995 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:05:28.006 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:28.013 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 28.3927ms
+2026-07-24 20:05:28.020 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:05:28.021 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:28.032 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:28.036 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 85.2575ms
+2026-07-24 20:05:28.041 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:28.059 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:05:28.075 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:05:28.085 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:28.093 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 23.883ms
+2026-07-24 20:05:28.100 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:28.107 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 87.1537ms
+2026-07-24 20:05:30.600 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&category=Konferencije+i+edukacija&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:05:30.632 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:30.642 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:05:30.647 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:05:30.661 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:05:30.675 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:05:30.689 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:30.695 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 40.4111ms
+2026-07-24 20:05:30.699 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:05:30.702 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&category=Konferencije+i+edukacija&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 101.8177ms
+2026-07-24 20:05:35.490 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:05:35.501 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:35.505 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:35.509 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:05:35.523 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:05:35.530 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:35.535 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 17.9742ms
+2026-07-24 20:05:35.538 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:05:35.541 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:35.550 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:35.553 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 63.3846ms
+2026-07-24 20:05:35.556 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:35.573 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:05:35.588 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:05:35.596 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:35.601 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 20.6078ms
+2026-07-24 20:05:35.608 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:35.612 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 74.5416ms
+2026-07-24 20:05:37.133 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&category=Muzika+i+zabava&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:05:37.142 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:37.146 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:05:37.151 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:05:37.163 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:05:37.173 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:05:37.183 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:37.189 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 30.8704ms
+2026-07-24 20:05:37.194 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:05:37.198 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&category=Muzika+i+zabava&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 64.9527ms
+2026-07-24 20:05:40.623 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:05:40.633 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:40.636 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:40.641 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:05:40.650 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:05:40.657 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:40.662 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 16.179ms
+2026-07-24 20:05:40.665 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:05:40.667 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:40.677 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:05:40.680 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 56.6446ms
+2026-07-24 20:05:40.682 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:40.695 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:05:40.712 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:05:40.724 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:05:40.731 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 27.1671ms
+2026-07-24 20:05:40.817 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:05:40.863 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 197.9211ms
+2026-07-24 20:09:43.021 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:09:43.029 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:09:43.032 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:43.036 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:09:43.047 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:09:43.051 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:09:43.056 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 13.1772ms
+2026-07-24 20:09:43.058 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:09:43.059 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:43.066 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:09:43.069 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 48.4498ms
+2026-07-24 20:09:43.072 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:43.083 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:09:43.095 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:09:43.102 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:09:43.108 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 19.4175ms
+2026-07-24 20:09:43.112 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:43.116 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 57.4801ms
+2026-07-24 20:09:44.566 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:09:44.584 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:09:44.587 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:09:44.590 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:09:44.600 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:09:44.613 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:09:44.622 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:09:44.624 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 29.8884ms
+2026-07-24 20:09:44.627 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:09:44.630 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 64.5313ms
+2026-07-24 20:09:48.999 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:09:49.009 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:09:49.012 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:49.017 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:09:49.033 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:09:49.040 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:09:49.044 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 20.1661ms
+2026-07-24 20:09:49.049 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:09:49.051 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:49.061 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:09:49.132 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 132.7481ms
+2026-07-24 20:09:49.157 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:49.214 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:09:49.224 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:09:49.254 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:09:49.257 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 37.9229ms
+2026-07-24 20:09:49.262 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:09:49.265 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 215.6901ms
+2026-07-24 20:10:34.961 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:34.969 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:34.970 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:34.973 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:34.987 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:34.993 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:34.997 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 17.2601ms
+2026-07-24 20:10:35.001 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:35.002 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:35.011 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:35.013 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 52.8732ms
+2026-07-24 20:10:35.016 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:35.033 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:35.044 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:35.051 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:35.058 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 19.252ms
+2026-07-24 20:10:35.063 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:35.065 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 64.3243ms
+2026-07-24 20:10:36.670 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa1&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:10:36.683 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:36.690 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:36.695 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:10:36.717 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+2026-07-24 20:10:36.757 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:10:36.772 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:36.781 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 76.5144ms
+2026-07-24 20:10:36.787 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:36.792 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa1&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 121.3335ms
+2026-07-24 20:10:38.537 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:38.549 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:38.552 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:38.556 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:38.570 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:38.577 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:38.582 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 18.7695ms
+2026-07-24 20:10:38.585 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:38.588 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:38.598 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:38.602 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 64.5503ms
+2026-07-24 20:10:38.606 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:38.622 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:38.635 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:38.644 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:38.649 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 19.8323ms
+2026-07-24 20:10:38.661 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:38.670 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 85.7777ms
+2026-07-24 20:10:39.942 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa2&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:10:39.969 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:39.971 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:39.975 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:10:39.993 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+2026-07-24 20:10:40.006 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:10:40.013 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:40.016 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 27.4483ms
+2026-07-24 20:10:40.019 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:40.022 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa2&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 79.5979ms
+2026-07-24 20:10:42.983 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:42.988 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:42.992 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:42.998 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:43.009 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:43.017 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:43.022 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 17.7709ms
+2026-07-24 20:10:43.024 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:43.026 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:43.033 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:43.037 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 53.9313ms
+2026-07-24 20:10:43.040 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:43.055 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:43.064 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:43.071 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:43.075 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 16.3167ms
+2026-07-24 20:10:43.079 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:43.082 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 58.5314ms
+2026-07-24 20:10:44.394 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa3&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:10:44.403 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:44.412 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:44.416 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:10:44.428 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+2026-07-24 20:10:44.442 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:10:44.452 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:44.459 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 38.4468ms
+2026-07-24 20:10:44.463 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:44.467 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa3&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 72.7652ms
+2026-07-24 20:10:45.958 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:45.968 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:45.970 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:45.975 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:45.985 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:45.992 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:45.997 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 17.7413ms
+2026-07-24 20:10:45.999 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:46.003 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:46.011 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:46.017 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 58.2907ms
+2026-07-24 20:10:46.018 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:46.036 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:46.049 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:46.053 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:46.056 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 11.9726ms
+2026-07-24 20:10:46.061 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:46.065 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 65.5822ms
+2026-07-24 20:10:47.476 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa4&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:10:47.503 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:47.509 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:47.516 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:10:47.532 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+2026-07-24 20:10:47.539 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:10:47.546 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:47.551 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 23.6171ms
+2026-07-24 20:10:47.557 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:47.561 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa4&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 84.9648ms
+2026-07-24 20:10:48.873 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:48.883 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:48.885 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:48.888 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:48.899 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:48.905 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:48.910 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 16.0999ms
+2026-07-24 20:10:48.912 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:48.915 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:48.921 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:48.923 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 49.9735ms
+2026-07-24 20:10:48.926 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:48.938 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:48.948 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:48.956 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:48.961 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 16.7404ms
+2026-07-24 20:10:48.965 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:48.968 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 56.3304ms
+2026-07-24 20:10:50.544 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa5&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:10:50.550 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:50.552 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:50.554 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:10:50.566 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+2026-07-24 20:10:50.577 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:10:50.586 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:50.589 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 31.0064ms
+2026-07-24 20:10:50.593 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:50.596 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=3fa85f64-5717-4562-b3fc-2c963f66afa5&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 52.4147ms
+2026-07-24 20:10:51.647 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:51.658 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:51.661 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:51.665 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:51.679 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:51.685 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:51.690 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 17.1361ms
+2026-07-24 20:10:51.693 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:51.696 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:51.703 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:51.707 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 59.5526ms
+2026-07-24 20:10:51.710 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:51.726 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:51.737 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:51.745 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:51.749 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 17.9588ms
+2026-07-24 20:10:51.753 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:51.756 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 63.3226ms
+2026-07-24 20:10:53.143 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=e9bf6f8d-8f9d-4cd6-8302-3093f5c98474&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:10:53.163 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:53.170 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:53.177 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:10:53.194 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+2026-07-24 20:10:53.211 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:10:53.218 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:53.223 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 33.002ms
+2026-07-24 20:10:53.230 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:53.242 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=e9bf6f8d-8f9d-4cd6-8302-3093f5c98474&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 98.5464ms
+2026-07-24 20:10:57.443 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:57.451 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:57.454 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:57.459 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:57.472 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:57.481 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:57.485 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 18.7561ms
+2026-07-24 20:10:57.487 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:10:57.492 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:57.503 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:57.506 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 63.4927ms
+2026-07-24 20:10:57.509 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:57.523 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:10:57.536 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:10:57.543 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:57.548 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 16.6858ms
+2026-07-24 20:10:57.552 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:10:57.555 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 68.1854ms
+2026-07-24 20:10:59.445 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=745acf45-0edb-4896-b9e2-ded20ab25fc6&onlyRecurring=false&pageNumber=1&pageSize=20 - null null
+2026-07-24 20:10:59.453 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:10:59.496 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:59.525 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:10:59.537 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+2026-07-24 20:10:59.551 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__request_CategoryId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[CategoryId] = @__request_CategoryId_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:10:59.573 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:10:59.577 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 45.2024ms
+2026-07-24 20:10:59.581 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:10:59.584 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?searchTerm=&categoryId=745acf45-0edb-4896-b9e2-ded20ab25fc6&onlyRecurring=false&pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 139.6896ms
+2026-07-24 20:11:01.168 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:11:01.177 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:11:01.180 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:11:01.184 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:11:01.195 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:11:01.201 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:11:01.204 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 13.9501ms
+2026-07-24 20:11:01.206 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:11:01.207 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:11:01.212 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:11:01.214 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 46.1577ms
+2026-07-24 20:11:01.217 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:11:01.229 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:11:01.239 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:11:01.244 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:11:01.247 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 13.0658ms
+2026-07-24 20:11:01.251 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:11:01.253 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 47.4342ms
+2026-07-24 20:15:06.768 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:15:06.771 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1 - null null
+2026-07-24 20:15:06.773 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:15:06.778 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:15:06.780 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:15:06.781 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:15:06.783 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:15:06.785 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:15:06.795 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:15:06.799 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:15:06.799 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:15:06.808 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 19.7343ms
+2026-07-24 20:15:06.811 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:15:06.812 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:15:06.817 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 49.1772ms
+2026-07-24 20:15:06.817 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:15:06.826 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 33.0656ms
+2026-07-24 20:15:06.828 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:15:06.828 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1 - 200 null application/json; charset=utf-8 57.3536ms
+2026-07-24 20:15:09.905 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:15:09.905 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1 - null null
+2026-07-24 20:15:09.911 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:15:09.916 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:15:09.918 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:15:09.920 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:15:09.923 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:15:09.926 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:15:09.941 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:15:09.951 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:15:09.956 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:15:09.969 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 35.1447ms
+2026-07-24 20:15:09.971 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:15:09.974 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:15:09.975 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:15:09.984 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:15:09.992 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:15:09.995 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 90.0401ms
+2026-07-24 20:15:10.000 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 56.2579ms
+2026-07-24 20:15:10.001 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:15:10.010 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1 - null null
+2026-07-24 20:15:10.014 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:15:10.016 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:15:10.025 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:15:10.029 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1 - 200 null application/json; charset=utf-8 123.5789ms
+2026-07-24 20:15:10.039 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:15:10.042 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:15:10.053 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:15:10.061 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:15:10.069 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 35.0539ms
+2026-07-24 20:15:10.072 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+2026-07-24 20:15:10.074 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:15:10.081 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 107.475ms
+2026-07-24 20:15:10.085 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit)
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:15:10.105 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:15:10.110 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 44.6999ms
+2026-07-24 20:15:10.114 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:15:10.118 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1 - 200 null application/json; charset=utf-8 107.9495ms
+2026-07-24 20:26:59.278 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:26:59.280 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1&startDate=2026-07-24 - null null
+2026-07-24 20:26:59.284 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:26:59.290 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:26:59.292 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:26:59.294 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:26:59.297 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:26:59.300 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:26:59.315 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:26:59.324 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:26:59.331 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 25.9498ms
+2026-07-24 20:26:59.338 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/categories - null null
+2026-07-24 20:26:59.340 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:26:59.341 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__request_StartDate_Value_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[StartDate] >= @__request_StartDate_Value_0
+2026-07-24 20:26:59.349 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:26:59.352 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 74.1056ms
+2026-07-24 20:26:59.360 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:26:59.372 +02:00 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller EventHub.API.Controllers.CategoriesController (EventHub.API).
+2026-07-24 20:26:59.382 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-07-24 20:26:59.388 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EventHub.Application.Features.Categories.Queries.GetCategories.CategoryDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:26:59.392 +02:00 [INF] Executed action EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API) in 14.1693ms
+2026-07-24 20:26:59.395 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.CategoriesController.GetAllCategories (EventHub.API)'
+2026-07-24 20:26:59.398 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/categories - 200 null application/json; charset=utf-8 60.6638ms
+2026-07-24 20:26:59.404 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@__request_StartDate_Value_0='?' (DbType = DateTime2), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[StartDate] >= @__request_StartDate_Value_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:26:59.423 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:26:59.426 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 111.1389ms
+2026-07-24 20:26:59.427 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1&startDate=2026-07-24 - null null
+2026-07-24 20:26:59.428 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:26:59.433 +02:00 [INF] CORS policy execution successful.
+2026-07-24 20:26:59.435 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1&startDate=2026-07-24 - 200 null application/json; charset=utf-8 155.9648ms
+2026-07-24 20:26:59.439 +02:00 [INF] Executing endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:26:59.451 +02:00 [INF] Route matched with {action = "GetAll", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.Nullable`1[System.Guid], System.String, System.Nullable`1[System.DateTime], System.Collections.Generic.List`1[System.Guid], System.Nullable`1[EventHub.Domain.Enums.EventStatus], System.Nullable`1[System.Boolean], System.Nullable`1[System.Double], System.Nullable`1[System.Double], System.Nullable`1[System.Double], Int32, Int32) on controller EventHub.API.Controllers.EventsController (EventHub.API).
+2026-07-24 20:26:59.462 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_StartDate_Value_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Events] AS [e]
+WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[StartDate] >= @__request_StartDate_Value_0
+2026-07-24 20:26:59.471 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_StartDate_Value_0='?' (DbType = DateTime2), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e0].[Id], [e0].[BlockReason], [e0].[CancelReason], [e0].[CategoryId], [e0].[CoverImageUrl], [e0].[CreatedAt], [e0].[Description], [e0].[EndDate], [e0].[EventSeriesId], [e0].[IsBlocked], [e0].[IsPrivate], [e0].[Latitude], [e0].[Location], [e0].[Longitude], [e0].[OnlineLink], [e0].[OrganizerId], [e0].[StartDate], [e0].[Status], [e0].[Title], [e0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[Name], [c].[UpdatedAt], [s].[EventId], [s].[TagId], [s].[Id], [s].[CreatedAt], [s].[Name], [s].[UpdatedAt]
+FROM (
+    SELECT [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+    FROM [Events] AS [e]
+    WHERE [e].[Status] <> 1 AND [e].[IsPrivate] = CAST(0 AS bit) AND [e].[StartDate] >= @__request_StartDate_Value_0
+    ORDER BY [e].[StartDate]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [e0]
+INNER JOIN [Categories] AS [c] ON [e0].[CategoryId] = [c].[Id]
+LEFT JOIN (
+    SELECT [e1].[EventId], [e1].[TagId], [t].[Id], [t].[CreatedAt], [t].[Name], [t].[UpdatedAt]
+    FROM [EventTags] AS [e1]
+    INNER JOIN [Tags] AS [t] ON [e1].[TagId] = [t].[Id]
+) AS [s] ON [e0].[Id] = [s].[EventId]
+ORDER BY [e0].[StartDate], [e0].[Id], [c].[Id], [s].[EventId], [s].[TagId]
+2026-07-24 20:26:59.478 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Collections.Generic.IEnumerable`1[[EventHub.Application.Features.Events.Queries.GetEvents.EventDto, EventHub.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType7`4[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], EventHub.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-24 20:26:59.482 +02:00 [INF] Executed action EventHub.API.Controllers.EventsController.GetAll (EventHub.API) in 24.8821ms
+2026-07-24 20:26:59.486 +02:00 [INF] Executed endpoint 'EventHub.API.Controllers.EventsController.GetAll (EventHub.API)'
+2026-07-24 20:26:59.489 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5110/api/v1/Events?pageSize=3&pageNumber=1&startDate=2026-07-24 - 200 null application/json; charset=utf-8 62.2648ms
+2026-07-24 20:30:11.596 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__windowStart_0='?' (DbType = DateTime2), @__windowEnd_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AttendeeEmail], [t].[AttendeeName], [t].[CreatedAt], [t].[EventId], [t].[PurchaseDate], [t].[PurchasePrice], [t].[ReminderSent], [t].[ReminderSentAt], [t].[Status], [t].[TicketCode], [t].[TicketTypeId], [t].[UpdatedAt], [t].[UserId], [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+FROM [Tickets] AS [t]
+INNER JOIN [Events] AS [e] ON [t].[EventId] = [e].[Id]
+WHERE [t].[ReminderSent] = CAST(0 AS bit) AND [e].[StartDate] >= @__windowStart_0 AND [e].[StartDate] <= @__windowEnd_1
+2026-07-24 20:33:19.042 +02:00 [INF] Server amra:17124:24cf1527 caught stopping signal...
+2026-07-24 20:33:19.045 +02:00 [INF] Application is shutting down...
+2026-07-24 20:33:19.558 +02:00 [INF] Server amra:17124:24cf1527 caught stopped signal...
+2026-07-24 20:33:20.000 +02:00 [INF] Server amra:17124:24cf1527 All dispatchers stopped
+2026-07-24 20:33:20.010 +02:00 [INF] Server amra:17124:24cf1527 successfully reported itself as stopped in 8.0432 ms
+2026-07-24 20:33:20.011 +02:00 [INF] Server amra:17124:24cf1527 has been stopped in total 966.5437 ms

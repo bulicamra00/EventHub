@@ -1,0 +1,32 @@
+2026-07-25 16:14:01.652 +02:00 [INF] Start installing Hangfire SQL objects...
+2026-07-25 16:14:02.288 +02:00 [INF] Hangfire SQL objects installed.
+2026-07-25 16:14:02.820 +02:00 [INF] User profile is available. Using 'C:\Users\bulic\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-25 16:14:03.269 +02:00 [INF] Now listening on: http://localhost:5110
+2026-07-25 16:14:03.303 +02:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: localhost,1433@EventHubDb'
+2026-07-25 16:14:03.306 +02:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-07-25 16:14:03.309 +02:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-07-25 16:14:03.347 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-25 16:14:03.353 +02:00 [INF] Hosting environment: Development
+2026-07-25 16:14:03.356 +02:00 [INF] Content root path: C:\Users\bulic\Desktop\EventHub\EventHub.API
+2026-07-25 16:14:03.407 +02:00 [INF] Server amra:17532:e53eba9d successfully announced in 42.4267 ms
+2026-07-25 16:14:03.417 +02:00 [INF] Server amra:17532:e53eba9d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-07-25 16:14:03.470 +02:00 [INF] Server amra:17532:e53eba9d all the dispatchers started
+2026-07-25 16:14:06.138 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__windowStart_0='?' (DbType = DateTime2), @__windowEnd_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AttendeeEmail], [t].[AttendeeName], [t].[CreatedAt], [t].[EventId], [t].[PurchaseDate], [t].[PurchasePrice], [t].[ReminderSent], [t].[ReminderSentAt], [t].[Status], [t].[TicketCode], [t].[TicketTypeId], [t].[UpdatedAt], [t].[UserId], [e].[Id], [e].[BlockReason], [e].[CancelReason], [e].[CategoryId], [e].[CoverImageUrl], [e].[CreatedAt], [e].[Description], [e].[EndDate], [e].[EventSeriesId], [e].[IsBlocked], [e].[IsPrivate], [e].[Latitude], [e].[Location], [e].[Longitude], [e].[OnlineLink], [e].[OrganizerId], [e].[StartDate], [e].[Status], [e].[Title], [e].[UpdatedAt]
+FROM [Tickets] AS [t]
+INNER JOIN [Events] AS [e] ON [t].[EventId] = [e].[Id]
+WHERE [t].[ReminderSent] = CAST(0 AS bit) AND [e].[StartDate] >= @__windowStart_0 AND [e].[StartDate] <= @__windowEnd_1
+2026-07-25 16:14:06.138 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CreatedAt], [b].[EventId], [b].[ExpiresAt], [b].[QrCode], [b].[Quantity], [b].[Status], [b].[TicketTypeId], [b].[TotalPrice], [b].[UpdatedAt], [b].[UserId]
+FROM [Bookings] AS [b]
+WHERE [b].[Status] = 1 AND [b].[ExpiresAt] < GETUTCDATE()
+2026-07-25 16:18:12.004 +02:00 [INF] Server amra:17532:e53eba9d caught stopping signal...
+2026-07-25 16:18:12.023 +02:00 [INF] Application is shutting down...
+2026-07-25 16:18:12.562 +02:00 [INF] Server amra:17532:e53eba9d caught stopped signal...
+2026-07-25 16:18:12.983 +02:00 [INF] Server amra:17532:e53eba9d All dispatchers stopped
+2026-07-25 16:18:13.023 +02:00 [INF] Server amra:17532:e53eba9d successfully reported itself as stopped in 33.4098 ms
+2026-07-25 16:18:13.029 +02:00 [INF] Server amra:17532:e53eba9d has been stopped in total 1006.7609 ms
