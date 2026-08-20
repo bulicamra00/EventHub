@@ -13,3 +13,4 @@ C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.A
 C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\refint\EventHub.Application.dll
 C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.pdb
 C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\ref\EventHub.Application.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Application\obj\Debug\net9.0\EventHub.Application.sourcelink.json

@@ -15,3 +15,4 @@ C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\refint\
 C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.pdb
 C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.genruntimeconfig.cache
 C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\ref\EventHub.Infrastructure.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Infrastructure\obj\Debug\net9.0\EventHub.Infrastructure.sourcelink.json

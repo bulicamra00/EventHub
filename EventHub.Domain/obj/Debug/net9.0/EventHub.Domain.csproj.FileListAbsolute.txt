@@ -9,3 +9,4 @@ C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain
 C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\refint\EventHub.Domain.dll
 C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.pdb
 C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\ref\EventHub.Domain.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.Domain\obj\Debug\net9.0\EventHub.Domain.sourcelink.json

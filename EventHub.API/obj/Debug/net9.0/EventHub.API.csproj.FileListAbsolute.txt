@@ -228,3 +228,4 @@ C:\Users\bulic\Desktop\EventHub\EventHub.API\obj\Debug\net9.0\refint\EventHub.AP
 C:\Users\bulic\Desktop\EventHub\EventHub.API\obj\Debug\net9.0\EventHub.API.pdb
 C:\Users\bulic\Desktop\EventHub\Eventhub.API\obj\Debug\net9.0\EventHub.API.genruntimeconfig.cache
 C:\Users\bulic\Desktop\EventHub\Eventhub.API\obj\Debug\net9.0\ref\EventHub.API.dll
+C:\Users\bulic\Desktop\EventHub\EventHub.API\obj\Debug\net9.0\EventHub.API.sourcelink.json
