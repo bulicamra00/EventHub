@@ -28,9 +28,13 @@ builder.Host.UseSerilog();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// 1. KRITIČNO: Prvo osiguravamo da baza i tabele (uključujući EF migracije) postojе
-// PRE nego što se Hangfire i ostali servisi registruju.
-using (var connection = new Microsoft.Data.SqlClient.SqlConnection(connectionString))
+// Kreiramo poseban konekcioni string za master bazu samo radi provere dostupnosti servera
+var sqlConnectionStringBuilder = new Microsoft.Data.SqlClient.SqlConnectionStringBuilder(connectionString);
+sqlConnectionStringBuilder.InitialCatalog = "master"; // privremeno gađamo master umesto EventHubDb
+var masterConnectionString = sqlConnectionStringBuilder.ConnectionString;
+
+// 1. KRITIČNO: Prvo osiguravamo da je SQL Server spreman i da baza/tabele (migracije) mogu da se kreiraju
+using (var connection = new Microsoft.Data.SqlClient.SqlConnection(masterConnectionString))
 {
     int maxRetries = 10;
     int delaySeconds = 3;
@@ -42,29 +46,29 @@ using (var connection = new Microsoft.Data.SqlClient.SqlConnection(connectionStr
         {
             connection.Open();
             connected = true;
-            Log.Information("Uspešno uspostavljena veza sa bazom podataka.");
+            Log.Information("Uspešno uspostavljena veza sa SQL Serverom.");
             break;
         }
         catch (Exception)
         {
-            Log.Warning($"Baza još nije spremna. Pokušaj {i + 1}/{maxRetries}. Čekam {delaySeconds} sekundi...");
+            Log.Warning($"SQL Server još nije spreman. Pokušaj {i + 1}/{maxRetries}. Čekam {delaySeconds} sekundi...");
             System.Threading.Thread.Sleep(TimeSpan.FromSeconds(delaySeconds));
         }
     }
 
     if (connected)
     {
-        // Privremeno kreiramo DbContext opcije da primenimo migracije odmah
+        // Koristimo originalni connection string (sa EventHubDb) za migracije i kreiranje baze
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
         optionsBuilder.UseSqlServer(connectionString);
 
         using var dbContext = new ApplicationDbContext(optionsBuilder.Options);
         dbContext.Database.Migrate();
-        Log.Information("Migracije baze su uspešno primenjene.");
+        Log.Information("Baza i migracije su uspešno primenjene.");
     }
     else
     {
-        Log.Error("Nije moguće uspostaviti vezu sa bazom podataka.");
+        Log.Error("Nije moguće uspostaviti vezu sa SQL Serverom.");
     }
 }
 
