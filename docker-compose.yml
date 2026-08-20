@@ -1,6 +1,6 @@
 services:
   db:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: eventhub-db
     restart: always
     environment:
@@ -48,10 +48,7 @@ services:
     depends_on:
       - api
     environment:
-      # OVO JE ZA AWS SERVER (trenutno aktivno):
       - VITE_API_URL=http://35.159.18.203:8080
-      
-      # - VITE_API_URL=http://localhost:8080
 
 volumes:
   sqlserverdata:
