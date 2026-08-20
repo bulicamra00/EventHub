@@ -49,7 +49,7 @@ services:
     depends_on:
       - api
     environment:
-      - VITE_API_URL=http://localhost:8080
+      - VITE_API_URL=http://63.187.61.129:8080
 
 volumes:
   sqlserverdata:
