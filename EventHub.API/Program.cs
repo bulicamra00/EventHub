@@ -124,6 +124,11 @@ using (var scope = app.Services.CreateScope())
             dbContext.Database.CanConnect();
             connected = true;
             Log.Information("Uspešno uspostavljena veza sa bazom podataka.");
+            
+            // Automatski primeni migracije i kreiraj bazu/tabele
+            dbContext.Database.Migrate();
+            Log.Information("Migracije baze su uspešno primenjene.");
+            
             break;
         }
         catch (Exception)
