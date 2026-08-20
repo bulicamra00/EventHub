@@ -1,7 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5110/api/v1',
+  // Ako je aplikacija na AWS-u, koristiće javni IP. Ako je na tvom laptopu, koristiće localhost.
+  baseURL: window.location.hostname === 'localhost' 
+    ? 'http://localhost:5110/api/v1' 
+    : 'http://35.159.18.203:8080/api/v1',
 });
 
 api.interceptors.request.use((config) => {
