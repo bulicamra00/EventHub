@@ -6,6 +6,7 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=EventHub2026
+      - MSSQL_PID=Express
     ports:
       - "1433:1433"
     volumes:
