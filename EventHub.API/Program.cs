@@ -135,9 +135,6 @@ using (var scope = app.Services.CreateScope())
 
     if (connected)
     {
-        // Automatski kreira bazu i primenjuje sve migracije
-        dbContext.Database.Migrate();
-
         recurringJobManager.AddOrUpdate<BookingBackgroundService>(
             "cancel-expired-bookings", 
             x => x.CancelExpiredBookings(), 

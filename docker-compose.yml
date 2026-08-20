@@ -6,7 +6,6 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=EventHub2026
-      - MSSQL_PID=Express
     ports:
       - "1433:1433"
     volumes:
@@ -48,7 +47,7 @@ services:
     depends_on:
       - api
     environment:
-      - VITE_API_URL=http://35.159.18.203:8080
+      - VITE_API_URL=http://localhost:8080
 
 volumes:
   sqlserverdata:
