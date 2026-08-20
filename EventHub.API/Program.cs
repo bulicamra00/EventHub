@@ -26,6 +26,48 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// 1. KRITIČNO: Prvo osiguravamo da baza i tabele (uključujući EF migracije) postojе
+// PRE nego što se Hangfire i ostali servisi registruju.
+using (var connection = new Microsoft.Data.SqlClient.SqlConnection(connectionString))
+{
+    int maxRetries = 10;
+    int delaySeconds = 3;
+    bool connected = false;
+
+    for (int i = 0; i < maxRetries; i++)
+    {
+        try
+        {
+            connection.Open();
+            connected = true;
+            Log.Information("Uspešno uspostavljena veza sa bazom podataka.");
+            break;
+        }
+        catch (Exception)
+        {
+            Log.Warning($"Baza još nije spremna. Pokušaj {i + 1}/{maxRetries}. Čekam {delaySeconds} sekundi...");
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(delaySeconds));
+        }
+    }
+
+    if (connected)
+    {
+        // Privremeno kreiramo DbContext opcije da primenimo migracije odmah
+        var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+        optionsBuilder.UseSqlServer(connectionString);
+
+        using var dbContext = new ApplicationDbContext(optionsBuilder.Options);
+        dbContext.Database.Migrate();
+        Log.Information("Migracije baze su uspešno primenjene.");
+    }
+    else
+    {
+        Log.Error("Nije moguće uspostaviti vezu sa bazom podataka.");
+    }
+}
+
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
@@ -39,11 +81,12 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Sada kada baza i tabele sigurno postoje, Hangfire može bezbedno da se pokrene
 builder.Services.AddHangfire(config => config
     .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
     .UseSimpleAssemblyNameTypeSerializer()
     .UseRecommendedSerializerSettings()
-    .UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
+    .UseSqlServerStorage(connectionString));
 
 builder.Services.AddHangfireServer();
 
@@ -72,7 +115,7 @@ builder.Services.AddApiVersioning(options => {
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
@@ -108,52 +151,20 @@ app.UseHangfireDashboard("/hangfire", new DashboardOptions
     Authorization = new[] { new HangfireCustomAuthFilter() } 
 });
 
+// Zakazivanje pozadinskih poslova
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     var recurringJobManager = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
     
-    int maxRetries = 10;
-    int delaySeconds = 3;
-    bool connected = false;
+    recurringJobManager.AddOrUpdate<BookingBackgroundService>(
+        "cancel-expired-bookings", 
+        x => x.CancelExpiredBookings(), 
+        "*/10 * * * *");
 
-    for (int i = 0; i < maxRetries; i++)
-    {
-        try
-        {
-            dbContext.Database.CanConnect();
-            connected = true;
-            Log.Information("Uspešno uspostavljena veza sa bazom podataka.");
-            
-            // Automatski primeni migracije i kreiraj bazu/tabele
-            dbContext.Database.Migrate();
-            Log.Information("Migracije baze su uspešno primenjene.");
-            
-            break;
-        }
-        catch (Exception)
-        {
-            Log.Warning($"Baza još nije spremna. Pokušaj {i + 1}/{maxRetries}. Čekam {delaySeconds} sekundi...");
-            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(delaySeconds));
-        }
-    }
-
-    if (connected)
-    {
-        recurringJobManager.AddOrUpdate<BookingBackgroundService>(
-            "cancel-expired-bookings", 
-            x => x.CancelExpiredBookings(), 
-            "*/10 * * * *");
-
-        recurringJobManager.AddOrUpdate<ReminderBackgroundService>(
-            "send-event-reminders", 
-            x => x.SendReminders(), 
-            "*/30 * * * *"); 
-    }
-    else
-    {
-        Log.Error("Nije moguće uspostaviti vezu sa bazom podataka. Hangfire poslovi nisu zakazani.");
-    }
+    recurringJobManager.AddOrUpdate<ReminderBackgroundService>(
+        "send-event-reminders", 
+        x => x.SendReminders(), 
+        "*/30 * * * *"); 
 }
 
 if (app.Environment.IsDevelopment())
