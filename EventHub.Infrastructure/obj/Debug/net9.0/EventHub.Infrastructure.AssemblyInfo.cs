@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventHub.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef54adc318ae50b2dbfee2bf00395fc2093d5511")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94285b21eea3f8104ebf85401e2a982e0c72dcb1")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventHub.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventHub.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
